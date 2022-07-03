@@ -5,3 +5,7 @@ A package to select, crop and compress images all through one call.A package to 
 ## 0.0.2
 
 Readme file updated with proper implementation instructions.
+
+## 0.0.21
+
+Readme file updated with proper implementation instructions.
