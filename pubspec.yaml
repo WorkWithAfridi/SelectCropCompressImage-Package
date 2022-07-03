@@ -1,7 +1,7 @@
 name: selectcropcompressimage
 description: A new Flutter package to select, crop and compress image.
 version: 0.0.1
-homepage: null
+homepage: https://github.com/llKYOTOll/SelectCropCompressImage_FlutterPackage.git
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
