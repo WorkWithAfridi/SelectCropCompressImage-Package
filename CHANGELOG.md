@@ -9,3 +9,7 @@ Readme file updated with proper implementation instructions.
 ## 0.0.21
 
 Readme file updated with proper implementation instructions.
+
+## 0.0.22
+
+Seperate implementations for Gallery and Camera Image Source.

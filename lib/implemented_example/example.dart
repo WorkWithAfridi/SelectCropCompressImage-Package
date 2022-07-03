@@ -1,14 +1,24 @@
 import 'dart:typed_data';
-
-import 'package:image_picker/image_picker.dart';
 import 'package:selectcropcompressimage/selectcropcompressimage.dart';
 
-Future getImage() async {
+Future getImageFromGallery() async {
   SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
   Uint8List? selectedCroppedAndCompressImage =
-      await selectCropCompressImage.selectCropCompressImage(
-    imageSource: ImageSource.gallery,
-    compressionAmount: 70,
+      await selectCropCompressImage.selectCropCompressImageFromCamera(
+    compressionAmount: 30,
+  );
+  if (selectedCroppedAndCompressImage != null) {
+    //Do something with the image
+  } else {
+    //Discard...
+  }
+}
+
+Future getImageFromCamera() async {
+  SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
+  Uint8List? selectedCroppedAndCompressImage =
+      await selectCropCompressImage.selectCropCompressImageFromCamera(
+    compressionAmount: 30,
   );
   if (selectedCroppedAndCompressImage != null) {
     //Do something with the image

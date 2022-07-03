@@ -27,7 +27,6 @@ A package to select, crop and compress images all through one call.A package to 
 
 ### Required parameters
 
-* **imageSource**: the absolute source of an image. Gallery / Camera
 * **compressionAmount**: the amount of compression the image will go through before returning.
 
 ### Optional parameters
@@ -48,15 +47,13 @@ A package to select, crop and compress images all through one call.A package to 
 
 ````dart
 
-import 'package:image_picker/image_picker.dart';
 import 'package:selectcropcompressimage/selectcropcompressimage.dart';
 
-Future getImage() async {
+Future getImageFromGallery() async {
   SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
   Uint8List? selectedCroppedAndCompressImage =
-      await selectCropCompressImage.selectCropCompressImage(
-    imageSource: ImageSource.gallery,
-    compressionAmount: 70,
+      await selectCropCompressImage.selectCropCompressImageFromCamera(
+    compressionAmount: 30,
   );
   if (selectedCroppedAndCompressImage != null) {
     //Do something with the image
@@ -64,6 +61,20 @@ Future getImage() async {
     //Discard...
   }
 }
+
+Future getImageFromCamera() async {
+  SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
+  Uint8List? selectedCroppedAndCompressImage =
+      await selectCropCompressImage.selectCropCompressImageFromCamera(
+    compressionAmount: 30,
+  );
+  if (selectedCroppedAndCompressImage != null) {
+    //Do something with the image
+  } else {
+    //Discard...
+  }
+}
+
 
 ````
 
