@@ -14,14 +14,14 @@ A package to select, crop and compress images all through one call.A package to 
 
 * Import this package!
 * (FOR ANDROID ONLY) Add the following lines of code in your android manifest file. 
+
+````xml
     <activity
         android:name="com.yalantis.ucrop.UCropActivity"
         android:screenOrientation="portrait"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-    ** Above the 
-            <!-- Don't delete the meta-data below.
-                 This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
-    line.
+````
+
 * (FOR iOS, no further configurations needed!)
 * Create instance of the SelectCropCompressImage class and call the selectCropCompressImage function with the required parameters passed! And thats it!! :D
 
