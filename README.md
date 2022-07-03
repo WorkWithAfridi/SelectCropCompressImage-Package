@@ -12,8 +12,8 @@ A package to select, crop and compress images all through one call.A package to 
 
 ## Getting started 
 
-1. Import this package!
-2. (FOR ANDROID ONLY) Add the following lines of code in your android manifest file. 
+* Import this package!
+* (FOR ANDROID ONLY) Add the following lines of code in your android manifest file. 
     <activity
         android:name="com.yalantis.ucrop.UCropActivity"
         android:screenOrientation="portrait"
@@ -22,8 +22,18 @@ A package to select, crop and compress images all through one call.A package to 
             <!-- Don't delete the meta-data below.
                  This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
     line.
-2. (FOR iOS, no further configurations needed!)
-3. Create instance of the SelectCropCompressImage class and call the selectCropCompressImage function with the required parameters passed! And thats it!! :D
+* (FOR iOS, no further configurations needed!)
+* Create instance of the SelectCropCompressImage class and call the selectCropCompressImage function with the required parameters passed! And thats it!! :D
+
+### Required parameters
+
+* **imageSource**: the absolute source of an image. Gallery / Camera
+* **compressionAmount**: the amount of compression the image will go through before returning.
+
+### Optional parameters
+
+* **aspectRatioX**: the X axis AspectRatio for image cropping. Default is 1.
+* **aspectRatioY**: the Y axis AspectRatio for image cropping. Default is 1.
 
 ## Additional information
 
@@ -35,6 +45,11 @@ Flutter Image Compress ^1.1.0 : https://pub.dev/packages/flutter_image_compress
 **The CompressionAmount needs to be in a range of 0-100. Otherwise the default compression amount will be used, which is 0.
 
 ## Example
+
+````dart
+
+import 'package:image_picker/image_picker.dart';
+import 'package:selectcropcompressimage/selectcropcompressimage.dart';
 
 Future getImage() async {
   SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
@@ -50,6 +65,12 @@ Future getImage() async {
   }
 }
 
+````
+
 ** View in file at implemented_example/example.dart
+
+### Note
+
+* The result file is saved in `NSTemporaryDirectory` on iOS and application Cache directory on Android, so it can be lost later, you are responsible for storing it somewhere permanent (if needed).
 
 
