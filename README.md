@@ -28,9 +28,9 @@ A package to select, crop and compress images all through one call.A package to 
 ## Additional information
 
 **Links to the packages used in this project.
-Image Picker : https://pub.dev/packages/image_picker
-Image Cropper : https://pub.dev/packages/image_cropper
-Flutter Image Compress: https://pub.dev/packages/flutter_image_compress
+Image Picker ^0.8.5+3 : https://pub.dev/packages/image_picker
+Image Cropper ^2.0.3 : https://pub.dev/packages/image_cropper
+Flutter Image Compress ^1.1.0 : https://pub.dev/packages/flutter_image_compress
 
 **The CompressionAmount needs to be in a range of 0-100. Otherwise the default compression amount will be used, which is 0.
 
