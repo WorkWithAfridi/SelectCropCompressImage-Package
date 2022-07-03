@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -8,6 +7,38 @@ import 'package:image_picker/image_picker.dart';
 class SelectCropCompressImage {
   Future<Uint8List?> selectCropCompressImageFromGallery({
     required int compressionAmount,
+    required BuildContext context,
+    int aspectRatioX = 1,
+    int aspectRatioY = 1,
+  }) async {
+    return await _selectCropCompressImage(
+      imageSource: ImageSource.gallery,
+      context: context,
+      compressionAmount: compressionAmount,
+      aspectRatioX: aspectRatioX,
+      aspectRatioY: aspectRatioY,
+    );
+  }
+
+  Future<Uint8List?> selectCropCompressImageFromCamera({
+    required int compressionAmount,
+    required BuildContext context,
+    int aspectRatioX = 1,
+    int aspectRatioY = 1,
+  }) async {
+    return await _selectCropCompressImage(
+      imageSource: ImageSource.camera,
+      context: context,
+      compressionAmount: compressionAmount,
+      aspectRatioX: aspectRatioX,
+      aspectRatioY: aspectRatioY,
+    );
+  }
+
+  Future<Uint8List?> _selectCropCompressImage({
+    required ImageSource imageSource,
+    required int compressionAmount,
+    required BuildContext context,
     int aspectRatioX = 1,
     int aspectRatioY = 1,
   }) async {
@@ -20,32 +51,9 @@ class SelectCropCompressImage {
         selectedImageFile: selectedImageFile,
         aspectRatioX: aspectRatioX,
         aspectRatioY: aspectRatioY,
+        context: context,
       );
-      Uint8List croppedAndCompressedImage = _compressImage(
-        croppedImageFile: croppedImageFile,
-        compressionAmount: compressionAmount,
-      );
-      return croppedAndCompressedImage;
-    }
-    return null;
-  }
-
-  Future<Uint8List?> selectCropCompressImageFromCamera({
-    required int compressionAmount,
-    int aspectRatioX = 1,
-    int aspectRatioY = 1,
-  }) async {
-    final ImagePicker imagePicker = ImagePicker();
-    XFile? selectedImageFile = await imagePicker.pickImage(
-      source: ImageSource.camera,
-    );
-    if (selectedImageFile != null) {
-      CroppedFile croppedImageFile = await _cropImage(
-        selectedImageFile: selectedImageFile,
-        aspectRatioX: aspectRatioX,
-        aspectRatioY: aspectRatioY,
-      );
-      Uint8List croppedAndCompressedImage = _compressImage(
+      Uint8List croppedAndCompressedImage = await _compressImage(
         croppedImageFile: croppedImageFile,
         compressionAmount: compressionAmount,
       );
@@ -58,10 +66,23 @@ class SelectCropCompressImage {
     required XFile selectedImageFile,
     required int aspectRatioX,
     required int aspectRatioY,
+    required BuildContext context,
   }) async {
     return await ImageCropper().cropImage(
       sourcePath: selectedImageFile.path,
       aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
+      uiSettings: [
+        AndroidUiSettings(
+          toolbarTitle: 'Image Cropper',
+          toolbarColor: Theme.of(context).primaryColor,
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.original,
+          lockAspectRatio: false,
+        ),
+        IOSUiSettings(
+          title: 'Cropper',
+        ),
+      ],
     );
   }
 

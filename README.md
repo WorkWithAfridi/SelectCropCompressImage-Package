@@ -13,6 +13,7 @@ A package to select, crop and compress images all through one call.A package to 
 ## Getting started 
 
 * Import this package!
+
 * (FOR ANDROID ONLY) Add the following lines of code in your android manifest file. 
 
 ````xml
@@ -28,6 +29,7 @@ A package to select, crop and compress images all through one call.A package to 
 ### Required parameters
 
 * **compressionAmount**: the amount of compression the image will go through before returning.
+* **context**: the build context is needed to match the color of the theme inside the image cropper widget.
 
 ### Optional parameters
 
@@ -54,6 +56,7 @@ Future getImageFromGallery() async {
   Uint8List? selectedCroppedAndCompressImage =
       await selectCropCompressImage.selectCropCompressImageFromCamera(
     compressionAmount: 30,
+    context: context,
   );
   if (selectedCroppedAndCompressImage != null) {
     //Do something with the image
@@ -67,6 +70,7 @@ Future getImageFromCamera() async {
   Uint8List? selectedCroppedAndCompressImage =
       await selectCropCompressImage.selectCropCompressImageFromCamera(
     compressionAmount: 30,
+    context: context,
   );
   if (selectedCroppedAndCompressImage != null) {
     //Do something with the image
@@ -75,10 +79,7 @@ Future getImageFromCamera() async {
   }
 }
 
-
 ````
-
-** View in file at implemented_example/example.dart
 
 ### Note
 
