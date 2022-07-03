@@ -5,6 +5,9 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SelectCropCompressImage {
+  //comprssionAmount is needed to verify the amount of image compression required by the user.
+  //context is needed to keep theming consistent throughout the packages.
+  //aspectRatio X&Y are required for the cropping dimentions.
   Future<Uint8List?> selectCropCompressImageFromGallery({
     required int compressionAmount,
     required BuildContext context,
@@ -20,6 +23,9 @@ class SelectCropCompressImage {
     );
   }
 
+  //comprssionAmount is needed to verify the amount of image compression required by the user.
+  //context is needed to keep theming consistent throughout the packages.
+  //aspectRatio X&Y are required for the cropping dimentions.
   Future<Uint8List?> selectCropCompressImageFromCamera({
     required int compressionAmount,
     required BuildContext context,
@@ -35,6 +41,10 @@ class SelectCropCompressImage {
     );
   }
 
+  //comprssionAmount is needed to verify the amount of image compression required by the user.
+  //context is needed to keep theming consistent throughout the packages.
+  //aspectRatio X&Y are required for the cropping dimentions.
+  // imageSource is required to point to the souce of the image. Gallery or Camera.
   Future<Uint8List?> _selectCropCompressImage({
     required ImageSource imageSource,
     required int compressionAmount,
@@ -62,6 +72,7 @@ class SelectCropCompressImage {
     return null;
   }
 
+  // Crops Images using the image cropper package.
   _cropImage({
     required XFile selectedImageFile,
     required int aspectRatioX,
@@ -86,6 +97,7 @@ class SelectCropCompressImage {
     );
   }
 
+  //Compresses image using the flutter image compress package.
   _compressImage({
     required CroppedFile croppedImageFile,
     required int compressionAmount,
