@@ -54,7 +54,7 @@ import 'package:selectcropcompressimage/selectcropcompressimage.dart';
 Future getImageFromGallery() async {
   SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
   Uint8List? selectedCroppedAndCompressImage =
-      await selectCropCompressImage.selectCropCompressImageFromCamera(
+      await selectCropCompressImage.selectCropCompressImageFromGallery(
     compressionAmount: 30,
     context: context,
   );

@@ -23,3 +23,7 @@ ISSUE SOLVED, where Future<dynamic> were returned instead of Uint8List file. And
 1. BUG fix 
    -> Bug: ImageSource always defaulted to gallery.
 2. ReadMe Updated
+
+## 0.0.25
+
+1. Example code/ implementation updated!
