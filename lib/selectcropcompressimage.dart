@@ -54,7 +54,7 @@ class SelectCropCompressImage {
   }) async {
     final ImagePicker imagePicker = ImagePicker();
     XFile? selectedImageFile = await imagePicker.pickImage(
-      source: ImageSource.gallery,
+      source: imageSource,
     );
     if (selectedImageFile != null) {
       CroppedFile croppedImageFile = await _cropImage(
