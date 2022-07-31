@@ -17,3 +17,9 @@ Seperate implementations for Gallery and Camera Image Source.
 ## 0.0.23
 
 ISSUE SOLVED, where Future<dynamic> were returned instead of Uint8List file. And added dynamic theme coloring in the image cropper widget, so that the appbar color in the image cropper widget matches that of the entire app theme.
+
+## 0.0.24
+
+1. BUG fix 
+   -> Bug: ImageSource always defaulted to gallery.
+2. ReadMe Updated
