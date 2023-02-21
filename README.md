@@ -14,6 +14,10 @@ Finally, the compressed image can be imported into the app and used as required.
 
 Overall, "SelectCropCompressImage" is a useful Flutter package that simplifies the process of selecting, cropping, and compressing images for use within the app, without requiring users to leave the app or use other third-party tools.
 
+## Images/ Screenshots
+
+![Demo Image](https://github.com/WorkWithAfridi/ProjectDemoImages/blob/master/SelectCropCompressImage/Screenshot%202023-02-21%20130731.png?raw=true)
+
 ## Features
 
 - Image Selection
