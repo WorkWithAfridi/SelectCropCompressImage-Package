@@ -1,8 +1,18 @@
 # SelectCropCompressImage
 
-## A package to select, crop and compress images all through one call.
+## "SelectCropCompressImage" is a useful Flutter package that simplifies the process of selecting, cropping, and compressing images for use within the app, without requiring users to leave the app or use other third-party tools.
 
-A package to select, crop and compress images all through one call. Image selection is done via Image Picker package, Image Cropping is achieved through the Image Copper package and finally the compression is done using the Flutter Image Compress package.
+"SelectCropCompressImage" is a Flutter package that provides the functionality for users to select an image from their phone's gallery or capture an image through their phone camera within the app. The package allows the user to crop the image according to their preference and finally compress the image before importing it to the app.
+
+Upon importing the package, users can easily access the image selection feature with a simple call to the package's function. The package provides a user-friendly interface that allows users to select an image from their gallery or capture a new image using their phone's camera.
+
+Once the user has selected or captured an image, the package provides a cropping feature that enables the user to adjust the dimensions of the image to their liking. The user can adjust the height and width of the image or choose a predefined aspect ratio.
+
+After cropping the image, the package allows the user to compress the image to reduce its size. The compression feature allows users to choose the level of compression to be applied to the image, depending on the app's preference and requirements.
+
+Finally, the compressed image can be imported into the app and used as required. The package ensures that the imported image is of the highest quality possible while maintaining a small size, allowing the app to load and display the image quickly and efficiently.
+
+Overall, "SelectCropCompressImage" is a useful Flutter package that simplifies the process of selecting, cropping, and compressing images for use within the app, without requiring users to leave the app or use other third-party tools.
 
 ## Features
 
