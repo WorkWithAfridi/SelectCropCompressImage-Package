@@ -13,6 +13,7 @@ class SelectCropCompressImage {
     required BuildContext context,
     int aspectRatioX = 1,
     int aspectRatioY = 1,
+    String? title,
   }) async {
     return await _selectCropCompressImage(
       imageSource: ImageSource.gallery,
@@ -31,6 +32,7 @@ class SelectCropCompressImage {
     required BuildContext context,
     int aspectRatioX = 1,
     int aspectRatioY = 1,
+    String? title,
   }) async {
     return await _selectCropCompressImage(
       imageSource: ImageSource.camera,
@@ -38,6 +40,7 @@ class SelectCropCompressImage {
       compressionAmount: compressionAmount,
       aspectRatioX: aspectRatioX,
       aspectRatioY: aspectRatioY,
+      title: title,
     );
   }
 
@@ -51,17 +54,19 @@ class SelectCropCompressImage {
     required BuildContext context,
     int aspectRatioX = 1,
     int aspectRatioY = 1,
+    String? title,
   }) async {
     final ImagePicker imagePicker = ImagePicker();
     XFile? selectedImageFile = await imagePicker.pickImage(
       source: imageSource,
     );
-    if (selectedImageFile != null) {
+    if (selectedImageFile != null && context.mounted) {
       CroppedFile croppedImageFile = await _cropImage(
         selectedImageFile: selectedImageFile,
         aspectRatioX: aspectRatioX,
         aspectRatioY: aspectRatioY,
         context: context,
+        title: title,
       );
       Uint8List croppedAndCompressedImage = await _compressImage(
         croppedImageFile: croppedImageFile,
@@ -78,20 +83,21 @@ class SelectCropCompressImage {
     required int aspectRatioX,
     required int aspectRatioY,
     required BuildContext context,
+    String? title,
   }) async {
     return await ImageCropper().cropImage(
       sourcePath: selectedImageFile.path,
       aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
       uiSettings: [
         AndroidUiSettings(
-          toolbarTitle: 'Image Cropper',
+          toolbarTitle: title ?? 'Image Cropper',
           toolbarColor: Theme.of(context).primaryColor,
           toolbarWidgetColor: Colors.white,
           initAspectRatio: CropAspectRatioPreset.original,
           lockAspectRatio: false,
         ),
         IOSUiSettings(
-          title: 'Cropper',
+          title: title ?? 'Cropper',
         ),
       ],
     );
