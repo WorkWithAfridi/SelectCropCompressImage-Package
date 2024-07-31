@@ -21,6 +21,7 @@ class SelectCropCompressImage {
       compressionAmount: compressionAmount,
       aspectRatioX: aspectRatioX,
       aspectRatioY: aspectRatioY,
+      title: title,
     );
   }
 
