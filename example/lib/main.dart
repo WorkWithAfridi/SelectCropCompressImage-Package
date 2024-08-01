@@ -42,10 +42,10 @@ class SelectCropCompressImageScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
-                Uint8List? selectedCroppedAndCompressImage =
-                    await selectCropCompressImage.selectCropCompressImageFromGallery(
+                Uint8List? selectedCroppedAndCompressImage = await selectCropCompressImage.selectCropCompressImageFromGallery(
                   compressionAmount: 30,
                   context: context,
+                  title: "SelectCropCompressApp",
                 );
                 if (selectedCroppedAndCompressImage != null) {
                   //Do something with the image
@@ -58,10 +58,10 @@ class SelectCropCompressImageScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 SelectCropCompressImage selectCropCompressImage = SelectCropCompressImage();
-                Uint8List? selectedCroppedAndCompressImage =
-                    await selectCropCompressImage.selectCropCompressImageFromCamera(
+                Uint8List? selectedCroppedAndCompressImage = await selectCropCompressImage.selectCropCompressImageFromCamera(
                   compressionAmount: 30,
                   context: context,
+                  title: "SelectCropCompressApp",
                 );
                 if (selectedCroppedAndCompressImage != null) {
                   //Do something with the image
