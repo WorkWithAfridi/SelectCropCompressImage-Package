@@ -71,6 +71,7 @@ Future getImageFromGallery() async {
       await selectCropCompressImage.selectCropCompressImageFromGallery(
     compressionAmount: 30,
     context: context,
+    title: "MyAppName",
   );
   if (selectedCroppedAndCompressImage != null) {
     //Do something with the image
@@ -85,6 +86,7 @@ Future getImageFromCamera() async {
       await selectCropCompressImage.selectCropCompressImageFromCamera(
     compressionAmount: 30,
     context: context,
+    title: "MyAppName",
   );
   if (selectedCroppedAndCompressImage != null) {
     //Do something with the image
