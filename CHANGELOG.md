@@ -1,8 +1,10 @@
+## 1.0.2
+- Allow title override of cropper screen
+## 1.0.1
+- Dependencies updated
 ## 1.0.0
 - Documentation updated
 - Added example project
-## 1.0.1
-- Dependencies updated
 ## 0.0.25
 1. Example code/ implementation updated!
 ## 0.0.24
